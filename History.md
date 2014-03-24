@@ -1,4 +1,8 @@
 
+0.3.0 - March 23, 2013
+----------------------
+* add converting excerpt to HTML
+
 0.2.0 - March 5, 2013
 ---------------------
 * rename to `metalsmith-excerpts`
