@@ -33,4 +33,24 @@ describe('metalsmith-excerpts', function(){
         done();
       });
   });
+
+  it('should convert excerpt files with reference-style links', function(done) {
+    Metalsmith('test/fixtures/reference-links')
+      .use(excerpt())
+      .build(function(err, files) {
+        if (err) return done(err);
+        assert.equal('<p>This is <a href="http://example.com">a link</a>.</p>', files['index.md'].excerpt);
+        done();
+      });
+  });
+
+  it('should convert excerpts with leading whitespace', function(done) {
+    Metalsmith('test/fixtures/indented-paragraph')
+      .use(excerpt())
+      .build(function(err, files) {
+        if (err) return done(err);
+        assert.equal('<pre><code>This is code.</code></pre>', files['index.md'].excerpt);
+        done();
+      });
+  });
 });
