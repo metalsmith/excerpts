@@ -9,7 +9,7 @@ describe('metalsmith-excerpts', function(){
       .use(excerpt())
       .build(function(err, files){
         if (err) return done(err);
-        assert.equal('<p>excerpt</p>\n', files['index.md'].excerpt);
+        assert.equal('<p>excerpt</p>', files['index.md'].excerpt);
         done();
       });
   });
@@ -19,7 +19,7 @@ describe('metalsmith-excerpts', function(){
       .use(excerpt())
       .build(function(err, files){
         if (err) return done(err);
-        assert.equal('<p>excerpt</p>\n', files['index.md'].excerpt);
+        assert.equal('<p>excerpt</p>', files['index.md'].excerpt);
         done();
       });
   });
@@ -29,7 +29,7 @@ describe('metalsmith-excerpts', function(){
       .use(excerpt())
       .build(function(err, files){
         if (err) return done(err);
-        assert.equal('<p>excerpt</p>\n', files['index.md'].excerpt);
+        assert.equal('<p>excerpt</p>', files['index.md'].excerpt);
         done();
       });
   });
@@ -44,12 +44,12 @@ describe('metalsmith-excerpts', function(){
       });
   });
 
-  it('should convert excerpts with leading whitespace', function(done) {
+  it('should skip excerpts with leading whitespace', function(done) {
     Metalsmith('test/fixtures/indented-paragraph')
       .use(excerpt())
       .build(function(err, files) {
         if (err) return done(err);
-        assert.equal('<pre><code>This is code.</code></pre>', files['index.md'].excerpt);
+        assert.equal('<p>This is the excerpt.</p>', files['index.md'].excerpt);
         done();
       });
   });
