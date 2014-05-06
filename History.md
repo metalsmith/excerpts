@@ -1,4 +1,8 @@
 
+1.0.0 - May 6, 2014
+-------------------
+* change to expect `.html` files
+
 0.3.1 - April 28, 2014
 ----------------------
 * fix whitespace-leading files
