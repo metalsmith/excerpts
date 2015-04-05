@@ -27,6 +27,30 @@ var excerpts = require('metalsmith-excerpts');
 metalsmith.use(excerpts());
 ```
 
+## Consuming Excerpts From Metadata
+
+  The excerpt HTML will be added to an `excerpt` property on the metadata. Here's sample usage in Jade:
+  
+```jade
+each post in collections.posts
+  div!= post.excerpt
+```
+
+## Options
+
+### selector
+
+  Passing a `selector` to excerpts will cause it to extract the first element matching that selector
+  pattern, instead of the default 'p' selector.
+  
+```js
+var excerpts = require('metalsmith-excerpts');
+
+metalsmith.use(excerpts({
+  selector: 'code'
+}));
+```  
+
 ## License
 
   MIT

@@ -1,2 +1,4 @@
 node_modules
-test/fixtures/*/build
+test/fixtures/**/build
+
+.idea/

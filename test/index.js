@@ -59,4 +59,32 @@ describe('metalsmith-excerpts', function(){
         done();
       });
   });
+
+  describe('options', function() {
+    it('should use the given tag selector when provided', function(done) {
+      Metalsmith('test/fixtures/options/selector-code')
+        .use(markdown())
+        .use(excerpt({
+          selector: 'code'
+        }))
+        .build(function(err, files) {
+          if (err) return done(err);
+          assert.equal('<code>This is code.\n</code>', files['index.html'].excerpt);
+          done();
+        });
+    });
+
+    it('should use the given class selector when provided', function(done) {
+      Metalsmith('test/fixtures/options/selector-class')
+        .use(markdown())
+        .use(excerpt({
+          selector: '.spotlight'
+        }))
+        .build(function(err, files) {
+          if (err) return done(err);
+          assert.equal('<p class="spotlight">This is the second paragraph.</p>', files['index.html'].excerpt);
+          done();
+        });
+    });
+  });
 });
