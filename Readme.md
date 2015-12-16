@@ -1,7 +1,10 @@
-
 # metalsmith-excerpts
 
   A [Metalsmith](http://metalsmith.io) plugin to extract an excerpt from Markdown files.
+
+  The excerpt is scraped from first paragraph (`<p>` tag) of the rendered HTML.
+
+  If a file already has an `excerpt` value, that value will be returned.
 
 ## Installation
 
