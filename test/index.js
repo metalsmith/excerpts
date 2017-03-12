@@ -59,4 +59,15 @@ describe('metalsmith-excerpts', function(){
         done();
       });
   });
+
+  it('should skip excerpts with images', function(done) {
+    Metalsmith('test/fixtures/first-paragraph-image')
+      .use(markdown())
+      .use(excerpt())
+      .build(function(err, files) {
+        if (err) return done(err);
+        assert.equal('<p>This is the excerpt.</p>', files['index.html'].excerpt);
+        done();
+      });
+  });
 });
