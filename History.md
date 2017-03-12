@@ -1,3 +1,10 @@
+1.1.1 - March 11, 2017
+-------------------
+* Fix excerpt for when first paragraph is an image
+
+1.1.0 - December 15, 2015
+-------------------
+* Use original value if already in frontmatter
 
 1.0.0 - May 6, 2014
 -------------------
