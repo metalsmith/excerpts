@@ -1,4 +1,9 @@
 
+1.2.0 / 2017-03-11
+==================
+
+* fix images in the first paragraph so they are ignored
+
 1.0.0 - May 6, 2014
 -------------------
 * change to expect `.html` files
