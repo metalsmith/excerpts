@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-excerpts",
-  "description": "A Metalsmith plugin to extract an excerpt from Markdown files.",
+  "description": "A Metalsmith plugin to extract an excerpt from HTML files.",
   "repository": "git://github.com/segmentio/metalsmith-excerpts.git",
   "version": "1.2.0",
   "license": "MIT",
