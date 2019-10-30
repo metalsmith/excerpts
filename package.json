@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "cheerio": "^0.22.0",
-    "debug": "^4.1.1"
+    "debug": "^2.6.9"
   },
   "devDependencies": {
     "metalsmith": "^2.3.0",
