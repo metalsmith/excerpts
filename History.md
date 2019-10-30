@@ -51,7 +51,7 @@ Check for [unreleased][] changes.
 
 ---
 
-[unreleased]: https://github.com/segmentio/metalsmith-markdown/compare/v1.3.0...HEAD
+[unreleased]: https://github.com/segmentio/metalsmith-excerpts/compare/v1.3.0...HEAD
 [1.3.0]: https://github.com/segmentio/metalsmith-excerpts/compare/1.2.0...v1.3.0
 [1.2.0]: https://github.com/segmentio/metalsmith-excerpts/compare/1.0.0...1.2.0
 [1.0.0]: https://github.com/segmentio/metalsmith-excerpts/compare/0.3.1...1.0.0
