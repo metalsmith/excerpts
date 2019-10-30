@@ -2,7 +2,7 @@
 
 Check for [unreleased][] changes.
 
-## [1.2.0][] - 2019-10-30
+## [1.3.0][] - 2019-10-30
 
 - Updated packages
 - Removed unnecessary Makefile
@@ -12,9 +12,12 @@ Check for [unreleased][] changes.
 
 # Previous
 
-## [1.0.0][] - May 6, 2014
+## [1.2.0][] - 2017-03-11
 
 - fix images in the first paragraph so they are ignored
+
+## [1.0.0][] - May 6, 2014
+
 - change to expect `.html` files
 
 ## [0.3.1][] - April 28, 2014
@@ -48,7 +51,9 @@ Check for [unreleased][] changes.
 
 ---
 
-[unreleased]: https://github.com/segmentio/metalsmith-markdown/compare/1.0.0...HEAD
+[unreleased]: https://github.com/segmentio/metalsmith-markdown/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/segmentio/metalsmith-excerpts/compare/1.2.0...v1.3.0
+[1.2.0]: https://github.com/segmentio/metalsmith-excerpts/compare/1.0.0...1.2.0
 [1.0.0]: https://github.com/segmentio/metalsmith-excerpts/compare/0.3.1...1.0.0
 [0.3.1]: https://github.com/segmentio/metalsmith-excerpts/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/segmentio/metalsmith-excerpts/compare/0.2.0...0.3.0
