@@ -1,73 +1,115 @@
+const {test} = require('tap');
+const markdown = require('metalsmith-markdown');
+const metalsmith = require('metalsmith');
+const excerpt = require('..');
 
-var assert = require('assert');
-var excerpt = require('..');
-var markdown = require('metalsmith-markdown');
-var Metalsmith = require('metalsmith');
+test('should convert excerpt files', assert => {
+  metalsmith('test/fixtures/basic')
+    .use(markdown())
+    .use(excerpt())
+    .build((err, files) => {
+      if (err) {
+        return err;
+      }
 
-describe('metalsmith-excerpts', function(){
-  it('should convert excerpt files', function(done){
-    Metalsmith('test/fixtures/basic')
-      .use(markdown())
-      .use(excerpt())
-      .build(function(err, files){
-        if (err) return done(err);
-        assert.equal('<p>excerpt</p>', files['index.html'].excerpt);
-        done();
-      });
-  });
+      assert.equal('<p>excerpt</p>', files['index.html'].excerpt);
+      assert.end();
+    });
+});
 
-  it('should convert excerpt files that have leading whitespace', function(done){
-    Metalsmith('test/fixtures/whitespace')
-      .use(markdown())
-      .use(excerpt())
-      .build(function(err, files){
-        if (err) return done(err);
-        assert.equal('<p>excerpt</p>', files['index.html'].excerpt);
-        done();
-      });
-  });
+test('should convert excerpt files that have leading whitespace', assert => {
+  metalsmith('test/fixtures/whitespace')
+    .use(markdown())
+    .use(excerpt())
+    .build((err, files) => {
+      if (err) {
+        return err;
+      }
 
-  it('should convert excerpt files that only have one paragraph', function(done){
-    Metalsmith('test/fixtures/one-paragraph')
-      .use(markdown())
-      .use(excerpt())
-      .build(function(err, files){
-        if (err) return done(err);
-        assert.equal('<p>excerpt</p>', files['index.html'].excerpt);
-        done();
-      });
-  });
+      assert.equal('<p>excerpt</p>', files['index.html'].excerpt);
+      assert.end();
+    });
+});
 
-  it('should convert excerpt files with reference-style links', function(done) {
-    Metalsmith('test/fixtures/reference-links')
-      .use(markdown())
-      .use(excerpt())
-      .build(function(err, files) {
-        if (err) return done(err);
-        assert.equal('<p>This is <a href="http://example.com">a link</a>.</p>', files['index.html'].excerpt);
-        done();
-      });
-  });
+test('should convert excerpt files that only have one paragraph', assert => {
+  metalsmith('test/fixtures/one-paragraph')
+    .use(markdown())
+    .use(excerpt())
+    .build((err, files) => {
+      if (err) {
+        return err;
+      }
 
-  it('should skip excerpts with leading whitespace', function(done) {
-    Metalsmith('test/fixtures/indented-paragraph')
-      .use(markdown())
-      .use(excerpt())
-      .build(function(err, files) {
-        if (err) return done(err);
-        assert.equal('<p>This is the excerpt.</p>', files['index.html'].excerpt);
-        done();
-      });
-  });
+      assert.equal('<p>excerpt</p>', files['index.html'].excerpt);
+      assert.end();
+    });
+});
 
-  it('should skip excerpts with images', function(done) {
-    Metalsmith('test/fixtures/first-paragraph-image')
-      .use(markdown())
-      .use(excerpt())
-      .build(function(err, files) {
-        if (err) return done(err);
-        assert.equal('<p>This is the excerpt.</p>', files['index.html'].excerpt);
-        done();
-      });
-  });
+test('should convert excerpt files with reference-style links', assert => {
+  metalsmith('test/fixtures/reference-links')
+    .use(markdown())
+    .use(excerpt())
+    .build((err, files) => {
+      if (err) {
+        return err;
+      }
+
+      assert.equal('<p>This is <a href="http://example.com">a link</a>.</p>', files['index.html'].excerpt);
+      assert.end();
+    });
+});
+
+test('should skip excerpts with leading whitespace', assert => {
+  metalsmith('test/fixtures/indented-paragraph')
+    .use(markdown())
+    .use(excerpt())
+    .build((err, files) => {
+      if (err) {
+        return err;
+      }
+
+      assert.equal('<p>This is the excerpt.</p>', files['index.html'].excerpt);
+      assert.end();
+    });
+});
+
+test('should skip excerpts with images', assert => {
+  metalsmith('test/fixtures/first-paragraph-image')
+    .use(markdown())
+    .use(excerpt())
+    .build((err, files) => {
+      if (err) {
+        return err;
+      }
+
+      assert.equal('<p>This is the excerpt.</p>', files['index.html'].excerpt);
+      assert.end();
+    });
+});
+
+test('should skip excerpts that are not html', assert => {
+  metalsmith('test/fixtures/not-html')
+    .use(excerpt())
+    .build((err, files) => {
+      if (err) {
+        return err;
+      }
+
+      assert.ok('template: layout', files['file.yaml'].contents.toString().trim());
+      assert.end();
+    });
+});
+
+test('should not mutate an existing excerpts', assert => {
+  metalsmith('test/fixtures/no-mutation')
+    .use(markdown())
+    .use(excerpt())
+    .build((err, files) => {
+      if (err) {
+        return err;
+      }
+
+      assert.equal('beans', files['index.html'].excerpt);
+      assert.end();
+    });
 });
