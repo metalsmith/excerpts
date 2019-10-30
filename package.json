@@ -7,7 +7,9 @@
   "main": "lib/index.js",
   "scripts": {
     "pretest": "xo --fix",
-    "test": "tap test"
+    "test": "tap test",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
     "cheerio": "^0.22.0",

@@ -2,17 +2,20 @@
 
 Check for [unreleased][] changes.
 
+## [1.2.0][] - 2019-10-30
+
 - Updated packages
+- Removed unnecessary Makefile
+- Modernised repo with xo, tap (which has coverage)
+- Added tests to fix coverage issues
+- Updated readme with badges
 
-## [1.0.0][] x- 2019-10-30
-
-- fix images in the first paragraph so they are ignored
+# Previous
 
 ## [1.0.0][] - May 6, 2014
 
+- fix images in the first paragraph so they are ignored
 - change to expect `.html` files
-
-# Previous
 
 ## [0.3.1][] - April 28, 2014
 
