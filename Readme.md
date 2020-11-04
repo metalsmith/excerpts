@@ -5,6 +5,7 @@
 [![metalsmith: core plugin][metalsmith-badge]][metalsmith-url]
 
 [![Known Vulnerabilities][snyk-badge]][synk-url]
+[![Node CI][action-badge]][action-url]
 
 A [Metalsmith](http://metalsmith.io) plugin to extract an excerpt from HTML files.
 
@@ -51,3 +52,6 @@ MIT
 [metalsmith-url]: http://metalsmith.io
 [snyk-badge]: https://snyk.io/test/github/segmentio/metalsmith-excerpts/badge.svg?targetFile=package.json
 [synk-url]: https://snyk.io/test/github/segmentio/metalsmith-excerpts?targetFile=package.json
+
+[action-url]: https://github.com/segmentio/metalsmith-excerpts/actions?query=workflow%3A%22Node+CI%22
+[action-badge]: https://github.com/segmentio/metalsmith-excerpts/workflows/Node%20CI/badge.svg
