@@ -2,13 +2,17 @@
 
 Check for [unreleased][] changes.
 
+## [1.4.1][] - 2020-11-04
+
+- Fixed CI issue for NodeJS v10
+
+# Previous
+
 ## [1.4.0][] - 2020-11-04
 
 - Add support for multiple formats: text & html
 - Updated packages
 - ESLint error fix
-
-# Previous
 
 ## [1.3.0][] - 2019-10-30
 
@@ -57,7 +61,8 @@ Check for [unreleased][] changes.
 
 ---
 
-[unreleased]: https://github.com/segmentio/metalsmith-excerpts/compare/v1.4.0...HEAD
+[unreleased]: https://github.com/segmentio/metalsmith-excerpts/compare/v1.4.1...HEAD
+[1.4.1]: https://github.com/segmentio/metalsmith-excerpts/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/segmentio/metalsmith-excerpts/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/segmentio/metalsmith-excerpts/compare/1.2.0...v1.3.0
 [1.2.0]: https://github.com/segmentio/metalsmith-excerpts/compare/1.0.0...1.2.0
