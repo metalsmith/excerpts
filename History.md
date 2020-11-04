@@ -2,6 +2,14 @@
 
 Check for [unreleased][] changes.
 
+## [1.4.0][] - 2020-11-04
+
+- Add support for multiple formats: text & html
+- Updated packages
+- ESLint error fix
+
+# Previous
+
 ## [1.3.0][] - 2019-10-30
 
 - Updated packages
@@ -9,8 +17,6 @@ Check for [unreleased][] changes.
 - Modernised repo with xo, tap (which has coverage)
 - Added tests to fix coverage issues
 - Updated readme with badges
-
-# Previous
 
 ## [1.2.0][] - 2017-03-11
 
@@ -51,7 +57,8 @@ Check for [unreleased][] changes.
 
 ---
 
-[unreleased]: https://github.com/segmentio/metalsmith-excerpts/compare/v1.3.0...HEAD
+[unreleased]: https://github.com/segmentio/metalsmith-excerpts/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/segmentio/metalsmith-excerpts/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/segmentio/metalsmith-excerpts/compare/1.2.0...v1.3.0
 [1.2.0]: https://github.com/segmentio/metalsmith-excerpts/compare/1.0.0...1.2.0
 [1.0.0]: https://github.com/segmentio/metalsmith-excerpts/compare/0.3.1...1.0.0
