@@ -36,6 +36,9 @@ var excerpts = require('metalsmith-excerpts');
 metalsmith.use(excerpts());
 ```
 
+If you pass a `multipleFormats: true` option to the plugin, it will put store
+an excerpt object like `{ html: '...', text: '...' }`;
+
 ## License
 
 MIT

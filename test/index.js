@@ -73,6 +73,21 @@ test('should skip excerpts with leading whitespace', assert => {
     });
 });
 
+test('should convert excerpts with multiple formats', assert => {
+  metalsmith('test/fixtures/reference-links')
+    .use(markdown())
+    .use(excerpt({multipleFormats: true}))
+    .build((err, files) => {
+      if (err) {
+        return err;
+      }
+
+      assert.equal('<p>This is <a href="http://example.com">a link</a>.</p>', files['index.html'].excerpt.html);
+      assert.equal('This is a link.', files['index.html'].excerpt.text);
+      assert.end();
+    });
+});
+
 test('should skip excerpts with images', assert => {
   metalsmith('test/fixtures/first-paragraph-image')
     .use(markdown())
