@@ -1,6 +1,6 @@
 const assert = require('assert');
 const { it } = require('mocha');
-const markdown = require('metalsmith-markdown');
+const markdown = require('@metalsmith/markdown');
 const metalsmith = require('metalsmith');
 const excerpt = require('..');
 

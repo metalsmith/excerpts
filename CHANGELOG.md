@@ -1,7 +1,4 @@
-# Latest
-
-Check for [unreleased][] changes.
-
+<!-- auto-changelog-above -->
 ## [1.4.1][] - 2020-11-04
 
 - Fixed CI issue for NodeJS v10

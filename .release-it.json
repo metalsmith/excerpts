@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "before:init": ["npm run lint", "npm test"],
+    "after:bump": "auto-changelog --sort-commits date -p -u --starting-version v1.4.1",
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+  },
+  "git": {
+    "commitMessage": "Release ${version}",
+    "commitArgs": ["-S"],
+    "tagAnnotation": "Release ${version}",
+    "tagArgs": ["-s"],
+    "changelog": "git log --no-merges --pretty=format:\"* %s (%h)\" ${from}...${to} "
+  },
+  "npm": {
+    "publish": false
+  },
+  "github": {
+    "release": true,
+    "releaseName": "@metalsmith/excerpts ${version}",
+    "tokenRef": "GITHUB_TOKEN",
+    "assets": ["metalsmith-*.tgz"]
+  }
+}

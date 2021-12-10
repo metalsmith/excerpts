@@ -1,57 +1,80 @@
-# metalsmith-excerpts
+# @metalsmith/excerpts
 
-[![npm version][npm-badge]][npm-url]
-[![code style: xo][xo-badge]][xo-url]
+A Metalsmith plugin to extract an excerpt from HTML files.
+
 [![metalsmith: core plugin][metalsmith-badge]][metalsmith-url]
-
-[![Known Vulnerabilities][snyk-badge]][synk-url]
-[![Node CI][action-badge]][action-url]
-
-A [Metalsmith](http://metalsmith.io) plugin to extract an excerpt from HTML files.
-
-The excerpt is scraped from first paragraph (`<p>` tag) of the rendered HTML.
-
-If a file already has an `excerpt` value, that value will be returned.
+[![npm: version][npm-badge]][npm-url]
+[![ci: build][ci-badge]][ci-url]
+[![code coverage][codecov-badge]][codecov-url]
+[![license: MIT][license-badge]][license-url]
 
 ## Installation
 
-    $ npm install metalsmith-excerpts
+NPM:
 
-## CLI Usage
+```
+npm install @metalsmith/excerpts
+```
 
-  Install via npm and then add the `metalsmith-excerpts` key to your `metalsmith.json` plugin, like so:
+Yarn:
+
+```
+yarn add @metalsmith/excerpts
+```
+
+## Usage
+
+The excerpt is scraped from the first paragraph (`<p>` tag) of the rendered HTML `contents` of a file and added to its metadata `excerpt` key.
+
+```js
+const excerpts = require('@metalsmith/excerpts')
+
+metalsmith.use(excerpts()) // default -> file.excerpt
+metalsmith.use(excerpts({ multipleFormats: true })) // -> file.excerpt.html & file.excerpt.text
+```
+
+### Custom excerpts
+
+You can define a custom `excerpt` in the front-matter of specific files:
+
+```md
+---
+excerpt: This will be the excerpt
+---
+
+This would be the excerpt if none was specified in the front-matter
+```
+
+### Excerpts with tags stripped
+
+Sometimes you may need access to the text content of the excerpt without HTML tags.
+Pass the `multipleFormats: true` option to store an excerpt object with both HTML and text excerpts `{ html: '...', text: '...' }`:
+
+```js
+metalsmith.use(excerpts({ multipleFormats: true }))
+```
+
+### CLI usage
+
+Add the `@metalsmith/excerpts` key to your `metalsmith.json` plugins key:
 
 ```json
 {
-  "plugins": {
-    "metalsmith-excerpts": true
-  } 
+  "plugins": [{ "@metalsmith/excerpts": { "multipleFormats": false } }]
 }
 ```
 
-## Javascript Usage
-
-```js
-var excerpts = require('metalsmith-excerpts');
-
-metalsmith.use(excerpts());
-```
-
-If you pass a `multipleFormats: true` option to the plugin, it will put store
-an excerpt object like `{ html: '...', text: '...' }`;
-
 ## License
 
-MIT
+[MIT](LICENSE)
 
-[npm-badge]: https://img.shields.io/npm/v/metalsmith-excerpts.svg
-[npm-url]: https://www.npmjs.com/package/metalsmith-excerpts
-[xo-badge]: https://img.shields.io/badge/code_style-xo-ff69b4.svg?longCache=true
-[xo-url]: https://github.com/xojs/xo
+[npm-badge]: https://img.shields.io/npm/v/@metalsmith/excerpts.svg
+[npm-url]: https://www.npmjs.com/package/@metalsmith/excerpts
+[ci-badge]: https://app.travis-ci.com/metalsmith/excerpts.svg?branch=master
+[ci-url]: https://app.travis-ci.com/github/metalsmith/excerpts
 [metalsmith-badge]: https://img.shields.io/badge/metalsmith-core_plugin-green.svg?longCache=true
-[metalsmith-url]: http://metalsmith.io
-[snyk-badge]: https://snyk.io/test/github/segmentio/metalsmith-excerpts/badge.svg?targetFile=package.json
-[synk-url]: https://snyk.io/test/github/segmentio/metalsmith-excerpts?targetFile=package.json
-
-[action-url]: https://github.com/segmentio/metalsmith-excerpts/actions?query=workflow%3A%22Node+CI%22
-[action-badge]: https://github.com/segmentio/metalsmith-excerpts/workflows/Node%20CI/badge.svg
+[metalsmith-url]: https://metalsmith.io
+[codecov-badge]: https://img.shields.io/coveralls/github/metalsmith/excerpts
+[codecov-url]: https://coveralls.io/github/metalsmith/excerpts
+[license-badge]: LICENSE
+[license-url]: https://img.shields.io/github/license/metalsmith/excerpts

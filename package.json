@@ -1,31 +1,56 @@
 {
-  "name": "metalsmith-excerpts",
-  "description": "A Metalsmith plugin to extract an excerpt from HTML files.",
-  "repository": "git://github.com/segmentio/metalsmith-excerpts.git",
+  "name": "@metalsmith/excerpts",
   "version": "1.4.1",
+  "description": "A Metalsmith plugin to extract an excerpt from HTML files.",
+  "keywords": [
+    "excerpt",
+    "metalsmith-plugin",
+    "metalsmith"
+  ],
+  "homepage": "https://github.com/metalsmith/excerpts#readme",
+  "bugs": "https://github.com/metalsmith/excerpts/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metalsmith/excerpts.git"
+  },
   "license": "MIT",
   "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
     "coveralls": "npm run coverage && cat ./coverage.info | coveralls",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "test": "nyc mocha",
-    "preversion": "npm test",
-    "postversion": "git push && git push --tags && npm publish"
+    "publish": "npm publish --access public",
+    "release": "npm pack && release-it .",
+    "test": "nyc mocha"
   },
   "dependencies": {
-    "cheerio": "^0.22.0",
-    "debug": "^4.2.0"
+    "cheerio": "^1.0.0-rc.10",
+    "debug": "^4.3.3"
   },
   "devDependencies": {
+    "@metalsmith/markdown": "^1.3.0",
+    "auto-changelog": "^2.3.0",
     "coveralls": "^3.1.1",
-    "eslint": "^7.32.0",
+    "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "metalsmith": "^2.3.0",
-    "metalsmith-markdown": "^1.3.0",
     "mocha": "^9.1.3",
     "nyc": "^15.1.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "release-it": "^14.11.8"
+  },
+  "peerDependencies": {
+    "metalsmith": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=8"
   }
 }
