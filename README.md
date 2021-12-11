@@ -76,5 +76,5 @@ Add the `@metalsmith/excerpts` key to your `metalsmith.json` plugins key:
 [metalsmith-url]: https://metalsmith.io
 [codecov-badge]: https://img.shields.io/coveralls/github/metalsmith/excerpts
 [codecov-url]: https://coveralls.io/github/metalsmith/excerpts
-[license-badge]: LICENSE
-[license-url]: https://img.shields.io/github/license/metalsmith/excerpts
+[license-badge]: https://img.shields.io/github/license/metalsmith/excerpts
+[license-url]: LICENSE

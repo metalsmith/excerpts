@@ -23,12 +23,13 @@
     "lib/*"
   ],
   "scripts": {
+    "changelog": "auto-changelog -u --sort-commits date --starting-date 2021-12-01 --commit-limit false --ignore-commit-pattern '(skip changelog|Release)'",
     "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
     "coveralls": "npm run coverage && cat ./coverage.info | coveralls",
     "format": "prettier --write .",
     "lint": "eslint .",
     "publish": "npm publish --access public",
-    "release": "npm pack && release-it .",
+    "release": "release-it .",
     "test": "nyc mocha"
   },
   "dependencies": {
