@@ -1,6 +1,6 @@
 {
   "name": "@metalsmith/excerpts",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A Metalsmith plugin to extract an excerpt from HTML files.",
   "keywords": [
     "excerpt",
