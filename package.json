@@ -20,15 +20,15 @@
     "test": "test"
   },
   "files": [
-    "lib/*"
+    "lib",
+    "CHANGELOG.md"
   ],
   "scripts": {
-    "changelog": "auto-changelog -u --sort-commits date --starting-date 2021-12-01 --commit-limit false --ignore-commit-pattern '(skip changelog|Release)'",
+    "changelog": "auto-changelog -u --starting-date 2021-12-01 --commit-limit false --ignore-commit-pattern '^((dev|chore|ci):|Release|skip changelog)'",
     "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
     "coveralls": "npm run coverage && cat ./coverage.info | coveralls",
-    "format": "prettier --write .",
+    "format": "prettier --write \"**/*.{yml,md,js,json}\"",
     "lint": "eslint .",
-    "publish": "npm publish --access public",
     "release": "release-it .",
     "test": "nyc mocha"
   },
@@ -53,5 +53,8 @@
   },
   "engines": {
     "node": ">=8"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
